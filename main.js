@@ -1,13 +1,39 @@
 const display = document.getElementById("display");
 
-function appendToDisplay(input) {
-  display.value += input;
+const num1 = 0;
+const num2 = 0;
+const operator = "";
+
+function operate(num1, num2, operator) {
+  if(operator === '+') {
+    addition();
+  }
+  else if(operator === '-') {
+    subtract();
+  }
+  else if(operator === '*') {
+    multiply();
+  }
+  else {
+    divide();
+  }
 }
 
-function clearDisplay() {
-  display.value = "";
+function addition(num1 , num2){
+  return num1 + num2;
 }
 
-function operate() {}
+function subtract(num1 , num2){
+  return num1 - num2;
+}
 
-console.log(display.value.length);
+function multiply(num1 , num2){
+  return num1 * num2;
+}
+
+function divide(num1 , num2){
+  if(num2 === 0){
+    return 0;
+  }
+  return num1 / num2;
+}
