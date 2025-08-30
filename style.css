@@ -1,0 +1,41 @@
+* {
+    padding: 0;
+    margin: 0;
+    /* outline: 1px solid red; */
+    font-size: 18px;
+}
+
+body {
+    background-color: white;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 200px;
+}
+
+#display {
+    width: 300px;
+    height: 50px;
+    border: 3px solid black;
+}
+
+#button-pad {
+    display: flex;
+    flex-wrap: wrap;
+    width: 300px;
+    height: 350px;
+    justify-content: center;
+    border: 3px solid black;
+}
+
+button {
+    background-color: aqua;
+    padding: 5px 20px;
+    margin: 10px 10px;
+    border: 2px solid black;
+    border-radius: 2px;
+}
