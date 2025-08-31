@@ -1,17 +1,19 @@
-const display = document.getElementById("display");
+const numberButton = document.querySelectorAll('.number');
+const operatorButton = document.querySelectorAll('.operator');
+const display = document.querySelectorAll("display");
+const current = document.querySelectorAll(".current");
 const num1 = 0;
 const num2 = 0;
 const operator = "";
+
+current.textContent = ' ';
 
 function appendToDisplay(input) {
   display.textContent += input;
 }
 
 function clearDisplay() {
-  // const num1 = 0;
-  // const num2 = 0;
-  // const operator = "";
-  display.textContent = "";
+  current.textContent = ' ';
 }
 
 function operate(num1, num2, operator) {
@@ -47,3 +49,30 @@ function divide(num1 , num2){
   }
   return num1 / num2;
 }
+
+let storedNumber = '';
+let clickedOperator = '';
+let firstNumber = '';
+let result = '';
+current.textContent = 0;
+
+numberButton.forEach((number) => {
+  number.addEventListener('click', function(){
+    storedNumber += number.value;
+    calculate();
+  })
+})
+
+operatorButton.forEach((operator) => {
+  operator.addEventListener('click', function(){
+    firstNumber = storedNumber;
+
+    clickedOperator = operator.textContent;
+  })
+})
+
+const calculate = () => {
+  const result = operate(parseFloat(firstNumber), parseFloat(storedNumber), clickedOperator);
+
+  current.textContent = result;
+  }
