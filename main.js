@@ -1,8 +1,18 @@
 const display = document.getElementById("display");
-
 const num1 = 0;
 const num2 = 0;
 const operator = "";
+
+function appendToDisplay(input) {
+  display.textContent += input;
+}
+
+function clearDisplay() {
+  // const num1 = 0;
+  // const num2 = 0;
+  // const operator = "";
+  display.textContent = "";
+}
 
 function operate(num1, num2, operator) {
   if(operator === '+') {
